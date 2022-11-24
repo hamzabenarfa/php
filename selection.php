@@ -1,4 +1,6 @@
 <?php
+
+
 require("connect.php");
 
 $sql="SELECT * from personne";
@@ -10,12 +12,9 @@ $res=$sth->fetchAll(PDO::FETCH_ASSOC);
 echo "<table border='1' >";
 foreach($res as $row){
        
-        
-
         echo "<tr>" ;
         echo "<td>";
         echo $row['matricule'];
-
 
         echo "</td>";
 
@@ -28,13 +27,12 @@ foreach($res as $row){
         echo "</td>";
 
         echo "<td>";
-        echo "<a href='modifier.php' >";
+        echo "<a href='mod.php' >";
         echo "modifier</a>";
         echo "</td>";
 
         echo "<td>";
-        //echo "<a href='supp.php?mat=$row["matricule"]'>";
-        echo "<a href='supp.php?mat=$row["matricule"]' >"
+        echo "<a href='supp.php?mat=".$row['matricule']."'>";
         echo "supprimier</a>";
         echo "</td>";
         echo"</tr>";
@@ -43,12 +41,6 @@ foreach($res as $row){
         
 }
 echo"</table>";
-
-
-
-
-
-
 
 
 ?>
