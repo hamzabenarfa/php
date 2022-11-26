@@ -27,7 +27,8 @@
 <?php
 
 
-require 'connect.php';
+require("../connect.php");
+
 
     $mail=$_GET["mail"];
     $nom=$_GET["nom"];
