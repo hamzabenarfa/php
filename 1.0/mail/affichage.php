@@ -55,7 +55,7 @@ foreach($res as $row){
         echo "</td>";
 
         echo "<td>";
-        echo "<a href='mod.php' >";
+        echo "<a href='mod.php?mail=".$row['mail']."'>";
         echo "modifier</a>";
         echo "</td>";
 
