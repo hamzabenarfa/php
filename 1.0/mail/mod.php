@@ -21,9 +21,7 @@
 <input type="submit" value="modifier">
 
 
-</form>
-</body>
-</html>
+
 
 
 <?php
@@ -33,12 +31,13 @@ $nom=$_GET["nom"];
 $prenom=$_GET["prenom"];
 $age=$_GET["age"];
 $pwd=$_GET["pwd"];
+$id=$_GET["id"];
 
 
+//$sql="UPDATE register SET nom='$nom' , prenom='$prenom' , age='$age' WHERE id='".$_GET['id']."'" ;
 
+$sql = "UPDATE register SET nom='$nom' WHERE id='$id'   ";
 
-
-$sql="UPDATE  register SET nom='$nom' , prenom='$prenom' , age='$age' WHERE mail='".$_GET["mail"]."'" ;
 
 echo($sql);
 
@@ -54,3 +53,7 @@ else
 echo $retour.'lignes ont ete affectee';
 
 ?>
+
+</form>
+</body>
+</html>

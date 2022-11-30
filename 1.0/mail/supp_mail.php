@@ -2,7 +2,7 @@
 require("../connect.php");
 
 
-$sql="DELETE FROM register WHERE mail='".$_GET["mail"]."'" ;
+$sql="DELETE FROM register WHERE id='".$_GET["id"]."'" ;
 
 echo($sql);
 

@@ -7,9 +7,12 @@
     <title>affichage mails</title>
 </head>
 <body>
+    <a href="register.php">ajouter</a>
+
 <table border='1' >
 
 <tr>
+                    <th>id</th>
                     <th>mail</th>
                     <th>Nom</th>
                     <th>prenom</th>
@@ -30,8 +33,13 @@ $res=$sth->fetchAll(PDO::FETCH_ASSOC);
 
 foreach($res as $row){
        
-           
+         
         echo "<tr>" ;
+        echo "<td>";
+        echo $row['id'];
+
+        echo "</td>";
+
         echo "<td>";
         echo $row['mail'];
 
@@ -55,12 +63,12 @@ foreach($res as $row){
         echo "</td>";
 
         echo "<td>";
-        echo "<a href='mod.php?mail=".$row['mail']."'>";
+        echo "<a href='mod.php?id=".$row['id']."'>";
         echo "modifier</a>";
         echo "</td>";
 
         echo "<td>";
-        echo "<a href='supp_mail.php?mail=".$row['mail']."'>";
+        echo "<a href='supp_mail.php?id=".$row['id']."'>";
         echo "supprimier</a>";
         echo "</td>";
         echo"</tr>";

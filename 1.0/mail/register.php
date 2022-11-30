@@ -8,6 +8,7 @@
     <body>
         <h1>Register</h1>
         <form method="get">
+            
             <label for="username">mail</label>
             <input type="text" id="username" name="mail"><br>
             <label for="password">Password</label>
