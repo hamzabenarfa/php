@@ -7,7 +7,7 @@ $sql="DELETE FROM membre WHERE id=:id" ;
 $retour = $cnx->prepare($sql);
 
 if ($retour->execute([':id' => $id])) {
-  header("Location: /php/2.0");
+  header("Location: /php/2.0/admin.php");
 }
 
 ?>

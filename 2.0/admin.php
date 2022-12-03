@@ -11,7 +11,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
   
-    <title>Pande Gym</title>
+    <title>admin</title>
   </head>
   <body>
     <h1 class="text-center">Membre list</h1>
@@ -50,7 +50,8 @@ $res=$sth->fetchAll(PDO::FETCH_OBJ);
                                 <td><?= $row->prenom ?></td>
                                 <td><?= $row->tel ?></td>
                                 <td>
-                                <a class="btn btn-success" href="mod.php?id=><?=$row->id ?>">edit</a>
+                                <a  href="edit.php?id=<?= $row->id ?>" class="btn btn-success">edit</a>
+                               
                                 <a onclick="return confirm('Are you sure ?')" 
                                 href="delete.php?id=<?= $row->id ?>" class='btn btn-danger'>Delete</a>
 
