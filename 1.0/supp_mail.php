@@ -1,12 +1,9 @@
 <?php
-require("../connect.php");
+require("connect.php");
 
 
 $sql="DELETE FROM register WHERE id='".$_GET["id"]."'" ;
 
-echo($sql);
-
-echo "</br>";
 
 $retour=$cnx->exec($sql);
 

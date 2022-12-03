@@ -1,25 +1,25 @@
 <?php
 require("connect.php");
+
 $id=$_GET["id"];
 
 $sql = 'SELECT * FROM membre WHERE id=:id';
 $statement = $cnx->prepare($sql);
 $statement->execute([':id' => $id ]);
 $row = $statement->fetch(PDO::FETCH_OBJ);
+if(isset($_POST['nom']) && isset($_POST['prenom'])&& isset($_POST['tel'])  ){
 
-
-if (isset ($_GET['nom']) && isset($_GET['prenom']) && isset($_GET['tel'])) {
-$nom=$_GET['nom'];
-$prenom=$_GET['prenom'];
-$tel=$_GET['tel'];
-
-$sql='UPDATE membre SET nom=:nom , prenom=:prenom, tel=:tel WHERE id=:id' ;
-$statement = $cnx->prepare($sql);
-if ($statement->execute([':nom'=>$nom,':prenom'=>$prenom,':tel'=>$tel,':id' => $id])) {
- //header("Location: /php/2.0/admin.php");
- echo $sql;
+    $name=$_POST['nom'];
+    $lname=$_POST['prenom'];
+    $phone=$_POST['tel'];
+    $sql='UPDATE membre SET nom=:name,prenom=:lname,tel=:phone  WHERE id=:id ' ;
+    $ste=$cnx->prepare($sql);
+    if ($ste->execute([':name'=>$name,':lname'=>$lname,':phone'=>$phone,':id'=>$id]))  {
+        header("Location: /php/2.0/admin.php");
+    }
 }
-}
+
+
 ?>
 
 <?php require('header.php');?>
@@ -39,7 +39,7 @@ if ($statement->execute([':nom'=>$nom,':prenom'=>$prenom,':tel'=>$tel,':id' => $
 <body>
    
 <div class="container">
-<form  method="get">
+<form  method="post">
         <div class="row">
             <div class="col-sm-12">
                 <h2 class="heading-h2 text-center" >Edit </h2>

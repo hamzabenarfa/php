@@ -1,4 +1,20 @@
+<?php
+require("connect.php");
+    $mail=$_GET["mail"];
+    $nom=$_GET["nom"];
+    $prenom=$_GET["prenom"];
+    $age=$_GET["age"];
+    $pwd=$_GET["pwd"];
 
+    
+    $sql = "INSERT INTO register(mail,nom,prenom,age,pwd) VALUES ('".$mail."','".$nom."','".$prenom."','".$age."','".$pwd."')";
+
+   $retour = $cnx->exec($sql);
+    
+
+
+
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -25,33 +41,3 @@
         </form>
     </body>
 </html>
-<?php
-
-
-require("../connect.php");
-
-
-    $mail=$_GET["mail"];
-    $nom=$_GET["nom"];
-    $prenom=$_GET["prenom"];
-    $age=$_GET["age"];
-    $pwd=$_GET["pwd"];
-
-    
-
-
-    $sql = "INSERT INTO register(mail,nom,prenom,age,pwd) VALUES ('".$mail."','".$nom."','".$prenom."','".$age."','".$pwd."')";
-
-    echo"$sql";
-    $retour = $cnx->exec($sql);
-    
-  
-if($retour===FALSE)
-die('error');
-else if ($retour===0)
-echo 'acune modif effectu';
-else 
-echo $retour.'ligne ont ete affectee';
-
-
-?>

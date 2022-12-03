@@ -7,7 +7,6 @@ $pwd="";
 try{
 $cnx= new PDO("mysql:host=$server;dbname=H&N",$user,$pwd);
 
-$cnx->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 }
 catch(PDOException $e){

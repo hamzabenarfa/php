@@ -8,7 +8,6 @@
 </head>
 <body>
     <a href="register.php">ajouter</a>
-
 <table border='1' >
 
 <tr>
@@ -20,7 +19,7 @@
                     <th>age</th>
                 </tr>
     <?php
-require("../connect.php");
+require("connect.php");
 
 
 $sql="SELECT * from register";
@@ -73,8 +72,6 @@ foreach($res as $row){
         echo "</td>";
         echo"</tr>";
 
-      
-        
 }
 
 ?>
