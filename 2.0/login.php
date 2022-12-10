@@ -1,25 +1,33 @@
 <?php
-
 require('connect.php');
-if( isset ($_GET['mail']) && isset($_GET['pwd'])){
+Session_start() ;
+
+if( isset($_GET['mail']) && isset($_GET['pwd']) && !empty(trim($_GET['mail']))&& !empty(trim($_GET["pwd"]))){
     $mail=$_GET['mail'];
     $pwd=$_GET['pwd'];
-$sql="SELECT * FROM manager WHERE mail='".$mail."' AND pwd='".$pwd."'";
 
+ $sql="SELECT * FROM manager WHERE mail='".$mail."' AND pwd='".$pwd."'";
 
-if($retour = $cnx->query($sql)){
+$retour = $cnx->query($sql);
 
     $res=$retour->fetchAll(PDO::FETCH_ASSOC);
 
     foreach($res as $row){
-
         $dbmail=$row['mail'];
-        $dbpwd=$row['pwd'];
-        
+        $dbpwd=$row['pwd'];    
     }
-    if ($mail==$dbmail && $pwd==$dbpwd){
 
-        header("Location: /php/2.0/admin.php");
+    if ($mail!=$dbmail || $pwd!=$dbpwd){
+
+        header("Location: /php/2.0/login.php");
+
+    }
+    else {
+
+
+      $_SESSION['connected'] = "oui" ;
+      header("Location: /php/2.0/admin.php");
+
 
     }
 
@@ -27,7 +35,7 @@ if($retour = $cnx->query($sql)){
 }
 
 
-}  
+
 ?>
 
 
@@ -49,6 +57,7 @@ if($retour = $cnx->query($sql)){
   <body>
 
     <form method="get">
+
   <section class="vh-100" style="background-color: #508bfc;">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">

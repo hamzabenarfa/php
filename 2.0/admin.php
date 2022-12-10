@@ -1,4 +1,22 @@
-<?php require('header.php'); ?>
+<?php require('nav.php'); ?>
+
+<?php 
+session_start();
+if (!isset($_SESSION['connected'])){
+    header("Location: /php/2.0/admin.php");
+    exit();
+}
+
+?>
+
+
+    <form class="d-flex mt-1" method="get" action="/php/2.0/search.php">
+      <input class="form-control me-2" name="search" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit" >Search</button>
+    </form> 
+
+   
+
 <!doctype html>
 <html lang="en">
   <head>

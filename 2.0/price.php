@@ -65,17 +65,17 @@
             <div class="card-body">
              
               <h5 class="card-title">Body Building</h5>
-              <small class='text-muted'>Individual</small>
+              <small class='text-muted'>build muscle</small>
               <br><br>
-              <span class="h2">$8</span>/month
+              <span class="h2">50 TND</span>/month
               <br><br>
               <div class="d-grid my-3">
                 <a href="/php/2.0/add.php" class="btn btn-outline-dark btn-block">Select</a>
               </div>
               <ul>
-                <li>Cras justo odio</li>
-                <li>Dapibus ac facilisis in</li>
-                <li>Vestibulum at eros</li>
+              <li>Makes you stronger</li>
+                <li>Improves heart health</li>
+                <li>Lowers your risk of injury</li>
                 
               </ul>
             </div>
@@ -88,18 +88,18 @@
             <div class="card-body">
              
               <h5 class="card-title">Cardio</h5>
-              <small class='text-muted'>Small Business</small>
+              <small class='text-muted'>run faster</small>
               <br><br>
-              <span class="h2">$20</span>/month
+              <span class="h2">20 TND</span>/month
               <br><br>
               <div class="d-grid my-3">
               <a href="/php/2.0/add.php" class="btn btn-outline-dark btn-block">Select</a>
 
               </div>
               <ul>
-                <li>Cras justo odio</li>
-                <li>Dapibus ac facilisis in</li>
-                <li>Vestibulum at eros</li>
+                <li>GREAT FOR WEIGHT LOSS</li>
+                <li>STRENGTHENS YOUR HEART</li>
+                <li>IMPROVES LUNG CAPACITY</li>
                 
               </ul>
             </div>
@@ -112,18 +112,18 @@
             <div class="card-body">
              
               <h5 class="card-title">Yoga</h5>
-              <small class='text-muted'>Large Company</small>
+              <small class='text-muted'>relax</small>
               <br><br>
-              <span class="h2">$40</span>/month
+              <span class="h2">40 TND</span>/month
               <br><br>
 
               <div class="d-grid my-3">
               <a href="/php/2.0/add.php" class="btn btn-outline-dark btn-block">Select</a>
               </div>
               <ul>
-                <li>Cras justo odio</li>
-                <li>Dapibus ac facilisis in</li>
-                <li>Vestibulum at eros</li>
+              <li>increased flexibility</li>
+                <li>improved athletic performance</li>
+                <li>maintaining a balanced metabolism</li>
                 
               </ul>
             </div>
