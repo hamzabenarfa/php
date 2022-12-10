@@ -59,19 +59,19 @@ $sql="SELECT * from  membre ";
 
 $sth=$cnx->query($sql);
 
-$res=$sth->fetchAll(PDO::FETCH_OBJ);
+$res=$sth->fetchAll(PDO::FETCH_BOTH);
 ?>
 <?php  foreach($res as $row): ?>
                             <tr>
-                                <td><?= $row->id ?></td>
-                                <td><?= $row->nom ?></td>
-                                <td><?= $row->prenom ?></td>
-                                <td><?= $row->tel ?></td>
+                                <td><?= $row['id']; ?></td>
+                                <td><?= $row['nom']; ?></td>
+                                <td><?= $row['prenom']; ?></td>
+                                <td><?= $row['tel']; ?></td>
                                 <td>
-                                <a  href="edit.php?id=<?= $row->id ?>" class="btn btn-success">edit</a>
+                                <a  href="edit.php?id=<?= $row['id'] ?>" class="btn btn-success">edit</a>
                                
                                 <a onclick="return confirm('Are you sure ?')" 
-                                href="delete.php?id=<?= $row->id ?>" class='btn btn-danger'>Delete</a>
+                                href="delete.php?id=<?= $row['id'] ?>" class='btn btn-danger'>Delete</a>
 
                                 </td>
 

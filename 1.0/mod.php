@@ -36,13 +36,13 @@ echo $retour.'lignes ont ete affectee';
     <h2>nom</h2>
     <input type="text" name="nom" id="">
     <h2>prenom</h2>
-    <input type="text" name="prenom" id="">
+    <input type="text" name="prenom" >
 
     <h2>mot de passe</h2>
-    <input type="text" name="pwd" id="">
+    <input type="text" name="pwd" >
 
     <h2>age</h2>
-    <input type="text" name="age" id="">
+    <input type="text" name="age" >
 <input type="submit" value="modifier">
 
 

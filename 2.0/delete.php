@@ -1,12 +1,10 @@
 <?php
 require("connect.php");
 
-$id=$_GET["id"];
-$sql="DELETE FROM membre WHERE id=:id" ;
 
-$retour = $cnx->prepare($sql);
+$sql="DELETE FROM membre WHERE id='".$_GET['id']."'" ;
 
-if ($retour->execute([':id' => $id])) {
+if ($cnx->exec($sql)) {
   header("Location: /php/2.0/admin.php");
 }
 

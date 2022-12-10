@@ -1,20 +1,21 @@
 <?php
 require("connect.php");
 
-$id=$_GET["id"];
 
-$sql = 'SELECT * FROM membre WHERE id=:id';
-$statement = $cnx->prepare($sql);
-$statement->execute([':id' => $id ]);
-$row = $statement->fetch(PDO::FETCH_OBJ);
-if(isset($_POST['nom']) && isset($_POST['prenom'])&& isset($_POST['tel'])  ){
+$sql = "SELECT * FROM membre WHERE id='".$_GET['id']."'";
+
+$sth=$cnx->query($sql);
+
+$row = $sth->fetch(PDO::FETCH_ASSOC);
+if( isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['tel']) ){
 
     $name=$_POST['nom'];
     $lname=$_POST['prenom'];
     $phone=$_POST['tel'];
-    $sql='UPDATE membre SET nom=:name,prenom=:lname,tel=:phone  WHERE id=:id ' ;
-    $ste=$cnx->prepare($sql);
-    if ($ste->execute([':name'=>$name,':lname'=>$lname,':phone'=>$phone,':id'=>$id]))  {
+
+    $sql="UPDATE membre SET nom='$name' , prenom='$lname' , tel='$phone' WHERE id='".$_GET['id']."'" ;
+    
+    if ($cnx->exec($sql))  {
         header("Location: /php/2.0/admin.php");
     }
 }
@@ -23,6 +24,7 @@ if(isset($_POST['nom']) && isset($_POST['prenom'])&& isset($_POST['tel'])  ){
 ?>
 
 <?php require('header.php');?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>  <!-- Required meta tags -->
@@ -51,19 +53,19 @@ if(isset($_POST['nom']) && isset($_POST['prenom'])&& isset($_POST['tel'])  ){
                             <div class="form-group">
                                 <label for="firstName" class="col-form-label-sm">Nom</label>
                                 <input type="text" class="form-control form-control-sm" id="firstName" name="nom"
-                                       placeholder="<?= $row->nom; ?>">
+                                       value="<?= $row['nom']; ?>">
                             </div>
                             <div class="form-group">
                                 <label for="lastName" class="col-form-label-sm">Prenom</label>
                                 <input type="text" class="form-control form-control-sm" id="lastName"
-                                placeholder="<?= $row->prenom; ?>" name="prenom">
+                                value="<?= $row['prenom']; ?>" name="prenom">
                             </div>
                         
                            
 
                             <div class="form-group">
                                 <label for="phone" class="col-form-label-sm">Phone</label>
-                                <input type="number" class="form-control form-control-sm" id="phone" placeholder="<?= $row->tel; ?>" name="tel">
+                                <input type="number" class="form-control form-control-sm" id="phone" value="<?= $row['tel']; ?>" name="tel">
                             </div>
                             
 

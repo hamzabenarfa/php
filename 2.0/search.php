@@ -11,6 +11,7 @@ $search='';
     $res=$req->fetchAll(PDO::FETCH_BOTH);
 
     foreach($res as $row){
+        
         $nom=$row['nom'];
            
     }
